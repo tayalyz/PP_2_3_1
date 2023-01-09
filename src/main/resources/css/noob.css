@@ -93,16 +93,8 @@ label {
     width: 50px;
 }
 
-.buttons form {
-    visibility: visible;
-}
-
 .user-row:hover {
     background: #f1f1f1;
-}
-
-.user-row:hover .buttons form {
-    visibility: visible;
 }
 
 .error {
