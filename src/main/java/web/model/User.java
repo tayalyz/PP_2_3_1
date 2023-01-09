@@ -27,13 +27,6 @@ public class User {
 
     }
 
-    public User(String firstName, String lastName, byte age, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-        this.email = email;
-    }
-
     public Long getId() {
         return id;
     }

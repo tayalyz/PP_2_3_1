@@ -16,6 +16,7 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
+
     @GetMapping()
     public String index(Model model) {
         List<User> users = userService.getAllUsers();
@@ -42,6 +43,7 @@ public class UserController {
         model.addAttribute("user", userService.getUserById(id));
         return "/edit";
     }
+
     @PatchMapping("/user_{id}")
     public String update(@ModelAttribute("user") User user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
