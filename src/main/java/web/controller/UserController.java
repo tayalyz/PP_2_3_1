@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -30,7 +31,7 @@ public class UserController {
     }
 
     @PostMapping()
-    public String saveUser(@ModelAttribute("user") User user, BindingResult bindingResult) {
+    public String saveUser(@ModelAttribute("user") @Valid User user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "/add";
         }
@@ -45,7 +46,7 @@ public class UserController {
     }
 
     @PatchMapping("/user_{id}")
-    public String update(@ModelAttribute("user") User user, BindingResult bindingResult) {
+    public String update(@ModelAttribute("user") @Valid User user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "/edit";
         }
